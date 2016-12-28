@@ -1,0 +1,14 @@
+{
+  "name": "nndhanasekaran-redhat_cve2016",
+  "version": "0.1.0",
+  "author": "nndhanasekaran",
+  "summary": "Module to find RedHat / CentOS Vulnerable kernels in facter",
+  "license": "Apache 2.0",
+  "source": "",
+  "project_page": "Github",
+  "issues_url": "Github",
+  "dependencies": [
+    {"version_requirement":">= 1.0.0","name":"puppetlabs-stdlib"}
+  ]
+}
+
