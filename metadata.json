@@ -1,14 +1,29 @@
 {
   "name": "nndhanasekaran-redhat_cve2016",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "author": "nndhanasekaran",
-  "summary": "Module to find RedHat / CentOS Vulnerable kernels in facter",
+  "summary": "Module to find dirty COW (cve-2016-5195) vulnerable kernels from facter",
   "license": "Apache 2.0",
-  "source": "",
-  "project_page": "Github",
-  "issues_url": "Github",
-  "dependencies": [
-    {"version_requirement":">= 1.0.0","name":"puppetlabs-stdlib"}
+  "source": "https://github.com/nndhanasekaran/redhat_cve2016",
+  "project_page": "https://github.com/nndhanasekaran/redhat_cve2016",
+  "issues_url": "https://github.com/nndhanasekaran/redhat_cve2016/issues",
+  "dependencies": [],
+  "operatingsystem_support": [
+   {
+      "operatingsystem": "RedHat",
+      "operatingsystemrelease": [
+        "5",
+        "6",
+        "7"
+      ]
+    },
+    {
+      "operatingsystem": "CentOS",
+      "operatingsystemrelease": [
+        "5",
+        "6",
+        "7"
+      ]
+    }
   ]
 }
-

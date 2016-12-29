@@ -2,8 +2,8 @@
 #
 # This module is used to find Vulnerable kernels in your environment.
 # RedHat has announced Dirty COW issue in 2016.
-# Find more details about the announcement at https://access.redhat.com/security/vulnerabilities/DirtyCow
-# This module has redhat script and facter to find the kernel status. You can see the kernelstatus facter value in dashboards or using "facter -p kernelstatus" command
+# More details at https://access.redhat.com/security/vulnerabilities/DirtyCow
+# You can see the kernelstatus facter in dashboards or "facter -p kernelstatus" command
 #
 # === Parameters
 #
@@ -23,14 +23,15 @@
 #
 # === Copyright
 #
-# Copyright 2016 Your name here, unless otherwise noted.
+# Copyright 2016 Dhanasekaran.
 #
 class redhat_cve2016 {
-  file { "/tmp/rh-cve-2016-5195_3.sh":
-    ensure  => 'present',
-    source  => "puppet:///modules/rhcve2016/rh-cve-2016-5195_3.sh",
-    mode    => '0755',
-    owner   => 'root',
-    group   => 'root',
+
+  file { '/tmp/rh-cve-2016-5195_3.sh':
+    ensure => 'present',
+    source => 'puppet:///modules/rhcve2016/rh-cve-2016-5195_3.sh',
+    mode   => '0755',
+    owner  => 'root',
+    group  => 'root',
   }
 }

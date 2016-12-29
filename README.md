@@ -15,24 +15,25 @@
 
 ## Overview
 
-Module will run RedHat script to find the Vulnerable kernel and report in facter. 
+Module will run RedHat provided script to find the Vulnerable kernel (Dirty COW) and report in facter. 
 
 ## Module Description
 
-This module will run RedHat script (rh-cve-2016-5195_3.sh) to find the Vulnerable kernel and report in facter. This module will not patch the vulnerable kernel, it just report whether kernel on the puppet agent is Vulnerable or not and report in facter. Facter can be verified using "facter -p kernelstatus"
+This module will run RedHat provided script (rh-cve-2016-5195_3.sh) to find the Dirty COW vulnerable kernel and report in facter. This module will not patch the vulnerable kernel, it just report whether kernel vulnerable or not and report in facter. Facter can be verified using "facter -p kernelstatus"
 
 ## Setup
 
-Just install the module and assign to profiles/roles or directly on site.pp
+Just install the module and assign to profiles/roles or directly on site.pp.
 
 ### What redhat_cve2016 affects
 
-* It will copy rh-cve-2016-5195_3.sh from module to /tmp/ and run. 
-* Then report in facter
+* redhat_cve2016 class will copy the script to /tmp 
+* kernelstatus facter will execute the script and report the output in facter.
+* we can verify the facter in any supporting web interfaces or command (facter -p kernelstatus)
 
-### Setup Requirements **OPTIONAL**
+### Setup Requirements.
 
-Nothing.
+It is simple module, not required any setup.
 
 ### Beginning with redhat_cve2016
 
@@ -42,20 +43,23 @@ class { 'redhat_cve2016' : }
 
 ## Usage
 
-Nothing special variables. 
+No special variables. To get the status of kernels,
+
+```ruby
+include redhat_cve2016
+```
+
+To remove this module,
+
+Directly edit the redhat_cve2016.pp file in the module and make sure ensure is absent and remove the kernelstatus.rb file from the facter. This will remove the script and facter from your puppet nodes.
 
 ## Reference
 
 * https://access.redhat.com/security/cve/cve-2016-5195
 
-
 ## Limitations
 
-Tested in RedHat/CentOS 5, 6 & 7
+RedHat/CentOS 5, 6 & 7
 
 ## Development
-
-
-## Release Notes/Contributors/Etc **Optional**
-
 
